@@ -1,0 +1,16 @@
+<div class="text-center">
+  <h1>RSS Entry</h1>
+</div>
+
+<div class="row">
+  <div class="col-sm-6 offset-sm-3">
+    <%= form_with(model: @richsitesummary, local: true) do |f| %>
+    <%= render 'layouts/error_messages', model: f.object %>
+    <div class="form-group">
+        <%= f.label :rss_url, 'RSSURL' %>
+        <%= f.url_field :rss_url, class: 'form-control' %>
+      </div>
+    <%= f.submit 'Entry', class: 'btn btn-primary btn-block' %>
+    <% end %>
+  </div>
+</div>

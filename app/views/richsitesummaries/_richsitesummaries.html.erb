@@ -1,0 +1,17 @@
+<% if richsitesummaries.any? %>
+  <ul class="list-unstyled">
+    <% richsitesummaries.each do |richsitesummary| %>
+      <li class="media">
+        <div class="media-body">
+          <div>
+            <%= richsitesummary.title %>
+          </div>
+          <div>
+            <p><%= link_to 'View profile', richsitesummary_path(richsitesummary) %></p>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <%= paginate richsitesummaries %>
+<% end %>
