@@ -18,6 +18,14 @@ class RichsitesummariesController < ApplicationController
     @richsitesummary.title = rss.title
     @richsitesummary.source_url = rss.url
     @richsitesummary.last_modified = rss.last_modified
+    
+    if @richsitesummary.save
+      flash[:success] = 'RSSを登録しました。'
+      redirect_to @richsitesummary
+    else
+      flash.now[:danger] = 'RSSの登録に失敗しました。'
+      render :new
+    end
   end
   
   def rss_params
