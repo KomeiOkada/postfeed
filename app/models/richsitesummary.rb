@@ -1,0 +1,2 @@
+class Richsitesummary < ApplicationRecord
+end
