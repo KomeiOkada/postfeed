@@ -1,0 +1,15 @@
+<ul class="list-unstyled">
+  <% articles.each do |article| %>
+    <li class="media mb-3">
+      <div class="media-body">
+        <div>
+          <%= link_to article.richsitesummary.title, richsitesummary_path(article.richsitesummary) %> <span class="text-muted">posted at <%= article.created_at %></span>
+        </div>
+        <div>
+          <p><%= article.title %></p>
+        </div>
+      </div>
+    </li>
+  <% end %>
+  <%= paginate articles %>
+</ul>
