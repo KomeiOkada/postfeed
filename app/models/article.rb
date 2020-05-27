@@ -1,5 +1,6 @@
 class Article < ApplicationRecord
   belongs_to :richsitesummary
+  accepts_nested_attributes_for :richsitesummary
   
   validates :rss_id, presence: true
   validates :title, presence: true

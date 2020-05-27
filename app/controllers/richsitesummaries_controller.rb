@@ -10,6 +10,7 @@ class RichsitesummariesController < ApplicationController
 
   def new
     @richsitesummary = Richsitesummary.new
+    @richsitesummary.build_articles
   end
 
   def create
