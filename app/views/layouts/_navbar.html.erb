@@ -11,7 +11,7 @@
           <li class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown"><%= current_user.name %></a>
             <ul class="dropdown-menu dropdown-menu-right">
-              <li class="dropdown-item">Reload</li>
+              <li class="dropdown-item"><%= link_to 'Reload', reload_path, method: :create %></li>
               <li class="dropdown-divider"></li>
               <li class="dropdown-item"><%= link_to 'Add RSS', new_richsitesummary_path %></li>
               <li class="dropdown-divider"></li>

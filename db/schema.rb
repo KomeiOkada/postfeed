@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2020_05_26_073958) do
 
-  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.bigint "richsitesummary_id"
     t.string "rss_id"
     t.text "title"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_073958) do
     t.index ["richsitesummary_id"], name: "index_articles_on_richsitesummary_id"
   end
 
-  create_table "richsitesummaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "richsitesummaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "title"
     t.text "rss_url"
     t.text "source_url"
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2020_05_26_073958) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.string "password_digest"
