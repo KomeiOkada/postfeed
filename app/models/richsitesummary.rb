@@ -8,4 +8,8 @@ class Richsitesummary < ApplicationRecord
                      
   has_many :articles
   accepts_nested_attributes_for :articles
+
+  has_many :relationships
+  has_many :followers, through: :relationships, source: :user
+  
 end

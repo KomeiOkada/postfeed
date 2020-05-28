@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_26_073958) do
+ActiveRecord::Schema.define(version: 2020_05_28_023409) do
 
   create_table "articles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
     t.bigint "richsitesummary_id"
@@ -23,6 +23,16 @@ ActiveRecord::Schema.define(version: 2020_05_26_073958) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["richsitesummary_id"], name: "index_articles_on_richsitesummary_id"
+  end
+
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "richsitesummary_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["richsitesummary_id"], name: "index_relationships_on_richsitesummary_id"
+    t.index ["user_id", "richsitesummary_id"], name: "index_relationships_on_user_id_and_richsitesummary_id", unique: true
+    t.index ["user_id"], name: "index_relationships_on_user_id"
   end
 
   create_table "richsitesummaries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin", force: :cascade do |t|
@@ -43,4 +53,6 @@ ActiveRecord::Schema.define(version: 2020_05_26_073958) do
   end
 
   add_foreign_key "articles", "richsitesummaries"
+  add_foreign_key "relationships", "richsitesummaries"
+  add_foreign_key "relationships", "users"
 end

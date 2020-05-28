@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   post 'reload', to:'articles#create'
   
   get 'signup', to: 'users#new'
-  resources :users, only: [:show, :new, :create]
+  
+  resources :users, only: [:show, :new, :create] do
+    member do
+      get :followings
+    end
+  end
+  
   resources :richsitesummaries, only: [:index, :show, :new, :create]
   resources :articles, only: [:show,:create]
 end
