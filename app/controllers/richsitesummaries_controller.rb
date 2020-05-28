@@ -7,7 +7,7 @@ class RichsitesummariesController < ApplicationController
 
   def show
     @richsitesummary = Richsitesummary.find(params[:id])
-    @articles = @richsitesummary.articles.order(id: :desc).page(params[:page])
+    @articles = @richsitesummary.articles.order(published: :desc).page(params[:page])
   end
 
   def new
