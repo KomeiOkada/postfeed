@@ -17,4 +17,5 @@ Rails.application.routes.draw do
   
   resources :richsitesummaries, only: [:index, :show, :new, :create]
   resources :articles, only: [:show,:create]
+  resources :relationships, only: [:create, :destroy]
 end
