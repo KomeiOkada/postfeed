@@ -3,10 +3,12 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
     if @user.id != @current_user.id
       @user = @current_user
       redirect_to @user
     end
+    counts(@user)
   end
 
   def new
@@ -23,6 +25,12 @@ class UsersController < ApplicationController
       flash.now[:danger] = "ユーザの登録に失敗しました．"
       render :new
     end
+  end
+  
+  def followings
+    @user = User.find(params[:id])
+    @followings = @user.followings.page(params[:page])
+    counts(@user)
   end
   
   private
