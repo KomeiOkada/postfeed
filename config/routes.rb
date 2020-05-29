@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   delete 'logout', to: 'sessions#destroy'  
   post 'reload', to:'articles#create'
   
+  get 'mypage', to:'users#show'
   get 'signup', to: 'users#new'
   
   resources :users, only: [:show, :new, :create] do
