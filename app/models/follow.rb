@@ -1,4 +1,4 @@
-class Relationship < ApplicationRecord
+class Follow < ApplicationRecord
   belongs_to :user
   belongs_to :richsitesummary
 end

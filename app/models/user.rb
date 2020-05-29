@@ -6,16 +6,16 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false }
   has_secure_password
   
-  has_many :relationships
-  has_many :followings, through: :relationships, source: :richsitesummary
+  has_many :follows
+  has_many :followings, through: :follows, source: :richsitesummary
   
   def follow(rss)
-    self.relationships.find_or_create_by(richsitesummary_id: rss.id)
+    self.follows.find_or_create_by(richsitesummary_id: rss.id)
   end
 
   def unfollow(rss)
-    relationship = self.relationships.find_by(richsitesummary_id: rss.id)
-    relationship.destroy if relationship
+    follow = self.follows.find_by(richsitesummary_id: rss.id)
+    follow.destroy if follow
   end
 
   def following?(rss)
