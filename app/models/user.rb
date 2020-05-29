@@ -22,4 +22,7 @@ class User < ApplicationRecord
     self.followings.include?(rss)
   end
   
+  def feed_rss
+    Article.where(Richsitesummary_id: self.following_ids)
+  end
 end

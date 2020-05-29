@@ -1,7 +1,6 @@
 class ArticlesController < ApplicationController
   def create
     Richsitesummary.all.each do |richsitesummary|
-      #@article = richsitesummary.articles.build()
       xml= HTTParty.get(richsitesummary.rss_url).body
       rss = Feedjira.parse(xml)
 

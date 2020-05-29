@@ -1,6 +1,6 @@
 <ul class="list-unstyled">
   <% articles.each do |article| %>
-    <li class="media mb-3">
+    <li class="media mb-12">
       <div class="media-body">
         <div>
           <%= link_to article.richsitesummary.title, richsitesummary_path(article.richsitesummary) %> <span class="text-muted">posted at <%= article.created_at %></span>
