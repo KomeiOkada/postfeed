@@ -61,3 +61,4 @@ end
 gem 'kaminari'
 gem 'feedjira'
 gem 'httparty'
+gem 'mysql2'
