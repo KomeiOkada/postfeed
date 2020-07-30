@@ -19,4 +19,8 @@ class ArticlesController < ApplicationController
       end
     end
   end
+  
+  def show
+    @article = Article.find(params[:id])
+  end
 end

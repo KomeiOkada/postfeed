@@ -1,0 +1,36 @@
+<h1>id: <%= @article.id %> のArticle詳細ページ</h1>
+
+<table class="table table-bordered">
+  <tr>
+    <th>id</th>
+    <td><%= @article.id %>
+  </tr>
+  <tr>
+    <th>RSS IS</th>
+    <td><%= @article.rss_id %></td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td><%= @article.title %></td>
+  </tr>
+  <tr>
+    <th>URL</th>
+    <td><%= @article.url %></td>
+  </tr>
+  <tr>
+    <th>Author</th>
+    <td><%= @article.author %></td>
+  </tr>
+  <tr>
+    <th>Summary</th>
+    <td><%= @article.summary %></td>
+  </tr>
+  <tr>
+    <th>Title</th>
+    <td><%= @article.published %></td>
+  </tr>
+</table>
+
+<p>コメント</p>
+<%= link_to 'コメントを投稿する．', class: 'btn btn-light' %>
+<%= link_to '戻る', class: 'btn btn-light' %>

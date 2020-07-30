@@ -50,7 +50,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
   database: postfeed_production
   username: postfeed
   password: <%= ENV['POSTFEED_DATABASE_PASSWORD'] %>
